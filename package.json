@@ -1,0 +1,27 @@
+{
+  "name": "chatapp-node",
+  "version": "1.0.0",
+  "description": "chat application using node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JayMotka216/chatApp-NODE.JS.git"
+  },
+  "author": "Jay Motka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JayMotka216/chatApp-NODE.JS/issues"
+  },
+  "homepage": "https://github.com/JayMotka216/chatApp-NODE.JS#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
