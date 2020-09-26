@@ -13,8 +13,6 @@ const PORT = process.env.PORT || 3000
 const publicDirectoryPath = path.join(__dirname,'../public')
 app.use(express.static(publicDirectoryPath))
 
-let count = 0
-
 io.on('connection', (socket) => {
     console.log('connected!')
 
@@ -22,7 +20,7 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('message','New User has joined!')
 
     socket.on('sendMessage', (message, callback) => {
-        const fliter = new Filter()
+        const filter = new Filter()
         if(filter.isProfane(message)){
             return callback('Profanity is not allowed!')
         }
@@ -32,7 +30,7 @@ io.on('connection', (socket) => {
     })
 
     socket.on('sendlocation', (coords,callback) => {
-        io.emit('message', `https://google.com/maps?q=${coords.latitude},${coords.longitude}`)
+        io.emit('locationMsg', `https://google.com/maps?q=${coords.latitude},${coords.longitude}`)
         callback()
     })
 
