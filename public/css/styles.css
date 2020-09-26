@@ -34,7 +34,6 @@ label {
 input {
     border: 1px solid #eeeeee;
     padding: 12px;
-    border-radius: 8%;
 }
 
 button {
@@ -104,6 +103,7 @@ button:disabled {
     display: flex;
     flex-direction: column;
     max-height: 100vh;
+    background-color: rgb(149, 203, 203);
 }
 
 .chat__messages {
