@@ -13,7 +13,8 @@ const urlTemp = document.querySelector('#url-temp').innerHTML
 socket.on('message', (message) => {
     console.log(message)
     const html = Mustache.render(msgTemp, {
-        message : message
+        message : message.text,
+        createdAt: moment(message.createdAt).format('h:mm A')
     })
     $messages.insertAdjacentHTML('beforeend', html)
 })
@@ -21,7 +22,8 @@ socket.on('message', (message) => {
 socket.on('locationMsg', (url) => {
     console.log(url)
     const html = Mustache.render(urlTemp, {
-        message : url
+        message : url.url,
+        createdAt : moment(url.createdAt).format('h:mm A')
     })
     $messages.insertAdjacentHTML('beforeend', html)
 })
