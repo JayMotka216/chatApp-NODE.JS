@@ -9,6 +9,7 @@ const $messages = document.querySelector('#messages')
 const msgTemp = document.querySelector('#msg-temp').innerHTML
 const urlTemp = document.querySelector('#url-temp').innerHTML
 
+const { username, room } = Qs.parse(location.search, { ignoreQueryPrefix: true })
 
 socket.on('message', (message) => {
     console.log(message)
@@ -63,3 +64,5 @@ $sendlocation.addEventListener('click', () => {
         })
     })
 })
+
+socket.emit('join', { username, room })
